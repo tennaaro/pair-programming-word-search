@@ -37,8 +37,14 @@ const wordSearch = (letters, word) => {
             return true
         }
     }
-    console.log(horizontalJoin)
-    
+    const reverseJoin = letters.map(ls => ls.reverse().join(''))
+    for (let l of reverseJoin) {
+        if (l.includes(word)) {
+            return true
+        }
+    }
+
+    /*
     let reversed = []
 
     for (let row of horizontalJoin) {
@@ -53,6 +59,7 @@ const wordSearch = (letters, word) => {
             return true
         }
     }
+    */
 
     return false
 
